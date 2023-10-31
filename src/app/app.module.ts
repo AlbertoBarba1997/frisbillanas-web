@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,21 +10,26 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UsuariosService } from './services/usuarios.service';
 import { HomeComponent } from './components/jugador/home/home.component';
 import { JugadoresComponent } from './components/admin/jugadores/jugadores.component';
-import { TorneosComponent } from './components/admin/torneos/torneos.component';
-import { NovedadesComponent } from './components/admin/novedades/novedades.component';
+import { TorneosComponent } from './components/jugador/torneos/torneos.component';
+import { NovedadesComponent } from './components/jugador/novedades/novedades.component';
 import { ContenidoComponent } from './components/jugador/contenido/contenido.component';
 import { CabeceraComponent } from './components/jugador/cabecera/cabecera.component';
+import { SpiritComponent } from './components/jugador/spirit/spirit.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    CabeceraComponent,
     HomeComponent,
     JugadoresComponent,
     TorneosComponent,
     NovedadesComponent,
     ContenidoComponent,
-    CabeceraComponent
+    SpiritComponent
+
+
 
   ],
   imports: [

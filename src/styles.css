@@ -3,3 +3,28 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@font-face {
+  font-family: 'Pokemon Hollow';
+  src: url('assets/fonts/Pokemon Hollow.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mario Bros';
+  src: url('assets/fonts/SuperMario256.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Adam';
+  src: url('assets/fonts/Adam-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Adam light';
+  src: url('assets/fonts/Adam-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Adam bold';
+  src: url('assets/fonts/Adam-Bold.ttf') format('truetype');
+}
+

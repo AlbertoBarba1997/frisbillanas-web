@@ -17,10 +17,11 @@
 
 }
 
+
 /* Estilos para la cabecera inferior */
 .header-bottom {
   background-color: #000;
-  height: 90px;
+  height: 104px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,28 +34,64 @@
 }
 
 .logo-title img {
-  max-height: 110px;
+  max-height: 120px;
   margin-right: z15px;
 }
 
 .logo-title h1 {
   color: #fff;
-  font-size: 24px;
+  font-size: 32px;
+  font-family: "Mario Bros";
+}
+.logo-title h2 {
+  color: #e6e3e3;
+  font-size: 32px;
+  font-family: "Adam bold";
 }
 
+
+.main-menu{
+
+  display: flex;
+  height: 100%;
+  align-items: center; /* Esto alinea verticalmente el contenido */
+  justify-content: center;
+  margin-right: 20px;
+}
 .main-menu ul {
+  display: flex;
+  height: 100%;
+  align-items: center; /* Esto alinea verticalmente el contenido */
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0;
+
 }
 
 .main-menu li {
-  display: inline;
-  margin-right: 20px;
+  display: flex;
+  height: 100%;
+  align-items: center; /* Esto alinea verticalmente el contenido */
+  justify-content: center;
+
+  padding: 16px;
+}
+
+.main-menu li:hover{
+  display: flex;
+  height: 100%;
+  align-items: center; /* Esto alinea verticalmente el contenido */
+  justify-content: center;
+  background-color: #cf6486;
+
+
+  padding: 16px;
 }
 
 .main-menu a {
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 20px;
+  font-family: "Adam bold";
 }
