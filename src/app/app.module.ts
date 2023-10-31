@@ -3,16 +3,39 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/users/login/login.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { UsuariosService } from './services/usuarios.service';
+import { HomeComponent } from './components/jugador/home/home.component';
+import { JugadoresComponent } from './components/admin/jugadores/jugadores.component';
+import { TorneosComponent } from './components/admin/torneos/torneos.component';
+import { NovedadesComponent } from './components/admin/novedades/novedades.component';
+import { ContenidoComponent } from './components/jugador/contenido/contenido.component';
+import { CabeceraComponent } from './components/jugador/cabecera/cabecera.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    JugadoresComponent,
+    TorneosComponent,
+    NovedadesComponent,
+    ContenidoComponent,
+    CabeceraComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [UsuariosService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

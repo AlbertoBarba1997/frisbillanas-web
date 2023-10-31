@@ -1,0 +1,151 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/*
+Colores chiripon:
+Rosa claro -    #cf6486
+Rosa oscuro -   #c6045e
+Lila -          #921061
+Blanco -        #ffffff
+Negro -         #161f22
+
+Negro fondo -   #1d191b
+
+*/
+
+
+
+.content-login{
+  background-color: #ce7491e2;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.login-wrapper {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.login-container {
+  margin-top: 100px;
+  height: 540px;
+  width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-top: 10px;
+  padding-bottom:15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.7em;
+  color: black;
+  font-weight: bold;
+}
+
+.form-group {
+  margin: 15px 0;
+}
+
+label {
+
+  margin-top: 16px;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: block;
+  color: black;
+
+
+}
+
+span{
+  color:red
+}
+
+input {
+  width: 70%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #dcf1f4;
+  font-weight: bold;
+  color: black;
+
+}
+
+.form-control{
+  color: #000000;
+
+  border-color: #000000;
+  font-size: 16px;
+}
+.form-control:focus {
+  color: #000000;
+  border-color: #c6045e; /* Cambia #ff0000 al color que desees */
+  box-shadow: 0 0 0 0.1rem #cf6486a1; /* Cambia el color de la sombra si lo deseas */
+}
+
+
+
+button {
+  background-color: #ba528b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #8d2666;
+  color: #fff;
+  border: none;
+}
+
+.btn {
+  background-color: #c31d6a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+.btn:focus {
+  background-color: #8e2164;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor:default
+}
+
+.alert alert-danger{
+  margin-top: 8px;
+}
+
+
+
+
