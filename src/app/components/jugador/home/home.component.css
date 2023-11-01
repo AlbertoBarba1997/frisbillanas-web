@@ -1,0 +1,43 @@
+.grid-layout{
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 75% 140% auto;
+
+  background-color: rgb(230, 180, 114);
+  border: 1px solid black;
+
+}
+
+.contenido{
+  background-color: rgb(240, 177, 94);
+  border: 1px solid black;
+  text-align: center;
+  line-height: 150px;
+}
+.carrusel{
+  grid-column:1 / span 2;
+  background-color: rgb(170, 235, 147);
+  border: 1px solid black;
+}
+
+
+.noticias{
+
+  background-color: rgb(241, 130, 214);
+  border: 1px solid black;
+}
+
+
+.torneos{
+
+  background-color: rgb(125, 116, 218);
+  border: 1px solid black;
+}
+
+
+.footer{
+  grid-column:1 / span 2;
+  background-color: rgb(1, 7, 3);
+  border: 1px solid black;
+  color:white;
+}
