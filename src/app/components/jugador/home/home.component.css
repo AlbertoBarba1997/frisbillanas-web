@@ -7,19 +7,19 @@ body{
 .grid-layout{
   display: grid;
   grid-template-columns: 65% 35%;
-  grid-template-rows: auto 140% auto;
+  grid-template-rows: auto auto auto;
 
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgb(33, 32, 32);
 
 
 }
 
 .contenido{
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgb(255, 255, 255);
 
-  text-align: center;
-  line-height: 150px;
+  text-align: left;
   color:white;
+
 }
 .carrusel{
   grid-column:1 / span 2;
@@ -29,20 +29,39 @@ body{
 }
 
 
+
 .noticias{
 
-  background-color: rgba(169, 49, 139, 0);
-  border: 1px solid black;
+  background-color: rgb(33, 32, 32);
+
+
+  padding-left: 80px;
+  padding-top: 40px;
 
 }
-
 
 .torneos{
+
+  background-color: rgb(33, 32, 32);
   border: 1px solid black;
 
-  background-color: rgba(124, 116, 218, 0);
+  padding-top: 40px;
+  text-align: center;
+
 
 }
+.torneos p{
+
+  padding-top: 8px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+h4{
+  font-family: "Adam bold";
+  padding-bottom: 8px;
+}
+
 
 
 .footer{

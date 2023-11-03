@@ -28,3 +28,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   src: url('assets/fonts/Adam-Bold.ttf') format('truetype');
 }
 
+.texto_rosa{
+  color: #cf6486;
+}
