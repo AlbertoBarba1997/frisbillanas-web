@@ -1,0 +1,29 @@
+.footer-top {
+  padding: 12px;
+  background-color: #000000;
+  line-height: 35px;
+  align-items: center;
+  text-align: center;
+
+}
+
+.social-icons a{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.footer-bottom {
+
+  background-color: #010101;
+
+  align-items: center;
+  text-align: center;
+  align-items: center;
+  color:#787777;
+  padding-top: 12px;
+
+}
+
+.footer-bottom p{
+  line-height: 20px;
+}

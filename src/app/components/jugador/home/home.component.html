@@ -7,10 +7,27 @@
   <div class="grid-layout">
 
 
-      <div class="contenido carrusel"> CARRUSEL DECORATIVO</div>
-      <div class="contenido noticias"> C. NOTICIAS </div>
+      <div class="contenido carrusel">
+        <app-carrousel></app-carrousel>
+        <!--c-carousel (itemChange)="onItemChange($event)" [interval]="5000" transition="slide">
+          <c-carousel-inner>
+            <c-carousel-item *ngFor="let slide of slides">
+              <img
+                [src]="slide.src"
+                alt="{{slide.title}}"
+                class="d-block w-100"
+                loading="lazy"
+              />
+            </c-carousel-item>
+          </c-carousel-inner>
+        </!--c-carousel-->
+
+
+
+      </div>
+      <div class="contenido noticias"> MURO NOTICIAS </div>
       <div class="contenido torneos"> TORNEOS</div>
-      <div class="contenido footer"> FOOTER </div>
+      <div class="contenido footer"> <app-footer></app-footer> </div>
 
 
 

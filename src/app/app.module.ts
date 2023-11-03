@@ -1,6 +1,8 @@
 import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +17,8 @@ import { NovedadesComponent } from './components/jugador/novedades/novedades.com
 import { ContenidoComponent } from './components/jugador/contenido/contenido.component';
 import { CabeceraComponent } from './components/jugador/cabecera/cabecera.component';
 import { SpiritComponent } from './components/jugador/spirit/spirit.component';
+import { FooterComponent } from './components/jugador/footer/footer.component';
+import { CarrouselComponent } from './components/jugador/carrousel/carrousel.component';
 
 
 @NgModule({
@@ -27,7 +31,9 @@ import { SpiritComponent } from './components/jugador/spirit/spirit.component';
     TorneosComponent,
     NovedadesComponent,
     ContenidoComponent,
-    SpiritComponent
+    SpiritComponent,
+    FooterComponent,
+    CarrouselComponent,
 
 
 
@@ -37,7 +43,8 @@ import { SpiritComponent } from './components/jugador/spirit/spirit.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
 
   ],
   providers: [UsuariosService, HttpClient],
