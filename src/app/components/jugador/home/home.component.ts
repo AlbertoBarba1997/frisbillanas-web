@@ -11,6 +11,7 @@ import { NovedadesService } from 'src/app/services/novedades.service';
 export class HomeComponent implements OnInit{
 
   public novedades!: Novedad[];
+  public URLGetImage: String="http://localhost:4200/api/publicaciones/getImage/";
 
   constructor(
     private _novedadesService : NovedadesService
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit{
         if(response.publicaciones){
 
           this.novedades = response.publicaciones;
-          console.log(this.novedades);
+
         }
 
       },

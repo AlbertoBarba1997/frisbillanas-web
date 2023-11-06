@@ -9,33 +9,81 @@
 
       <div class="contenido carrusel">
         <app-carrousel></app-carrousel>
-        <!--c-carousel (itemChange)="onItemChange($event)" [interval]="5000" transition="slide">
-          <c-carousel-inner>
-            <c-carousel-item *ngFor="let slide of slides">
-              <img
-                [src]="slide.src"
-                alt="{{slide.title}}"
-                class="d-block w-100"
-                loading="lazy"
-              />
-            </c-carousel-item>
-          </c-carousel-inner>
-        </!--c-carousel-->
-
 
 
       </div>
       <div class="contenido noticias">
         <h4><u>Ultimas novedades </u></h4>
-        <ul>
-          <li *ngFor="let novedad of novedades"> {{novedad.tittle}}</li>
-        </ul>
+        <!--ul class="listado-noticia">
+          <li *ngFor="let novedad of novedades"  >
+            <div class="noticia">
+              <div >
+                  <img width="350px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia 1">
+              </div>
+              <div class="resumen">
+                  <div class="titulo"><h6>{{novedad.tittle}}</h6></div>
+                  <div class="descripcion">{{ novedad.text | slice:0:350 }}
+                    {{ novedad.text.length > 350 ? '...' : '' }}</div>
+              </div>
+          </div>
+          </li>
+        </!--ul-->
+
+        <div class="noticia" *ngIf="novedades && novedades.length > 0">
+          <div >
+
+            <img *ngIf="novedades[0].file ; else imagenPorDefecto" width="400px" height="264px" src="{{URLGetImage+novedades[0].file}}" alt="Imagen de Noticia">
+
+            <ng-template #imagenPorDefecto>
+              <img width="400px" height="264px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia">
+            </ng-template>
+
+          </div>
+          <div class="resumen">
+              <div class="titulo"><h6>{{novedades[0].tittle}}</h6></div>
+              <div class="descripcion">{{ novedades[0].text | slice:0:350 }}
+                {{ novedades[0].text.length > 350? '...' : '' }}</div>
+          </div>
+        </div>
+
+        <div class="noticia-derecha" *ngIf="novedades && novedades.length > 1">
+          <div class="resumen">
+              <div class="titulo"><h6>{{novedades[1].tittle}}</h6></div>
+              <div class="descripcion">{{ novedades[1].text | slice:0:350 }}
+                {{ novedades[1].text.length > 350 ? '...' : '' }}</div>
+          </div>
+          <div >
+            <img *ngIf="novedades[1].file; else imagenPorDefecto" width="400px" height="264px" src="{{URLGetImage+novedades[1].file}}" alt="Imagen de Noticia">
+
+            <ng-template #imagenPorDefecto>
+              <img width="400px" height="264px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia">
+            </ng-template>
+        </div>
+        </div>
+
+        <div class="noticia"  *ngIf="novedades && novedades.length > 2">
+          <div >
+            <img *ngIf="novedades[2].file; else imagenPorDefecto" width="400px" height="264px" src="{{URLGetImage+novedades[2].file}}" alt="Imagen de Noticia">
+
+            <ng-template #imagenPorDefecto>
+              <img width="400px" height="264px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia">
+            </ng-template>
+          </div>
+          <div class="resumen">
+              <div class="titulo"><h6>{{novedades[2].tittle}}</h6></div>
+              <div class="descripcion">{{ novedades[2].text | slice:0:350 }}
+                {{ novedades[2].text.length > 350 ? '...' : '' }}</div>
+
+          </div>
+        </div>
+
+        <div style="text-align: center; padding-bottom: 40px;" > <a  routerLink="/jugadores/novedades"> <u class="texto_rosa"> Ver todas las novedades</u> </a></div>
 
 
       </div>
       <div class="contenido torneos">
         <h4><u>Siguiente torneo </u></h4>
-          <img src="../../../../assets\img\Chiripones_cartel2023.jpg" width="300px">
+          <img src="../../../../assets\img\Chiripones_cartel2023.jpg" width="280px">
           <p>
 
             <strong style="font-size: 20px;">CHIRIPONES 2023</strong><span>&#x2600;&#xfe0f;</span>  <br>
@@ -50,19 +98,15 @@
 
             <br><br>
 
-            <strong>¿Aún no te has inscrito? Todavía puedes hacerlo! </strong>¿Aún no te has inscrito? Todavía puedes hacerlo!
-            <br> <br> <br>
+            <strong>¿Aún no te has inscrito? Todavía puedes hacerlo! </strong>
+            <br> <br><br>
 
-
-            <a routerLink="/jugadores/torneos"> <u class="texto_rosa"> Ver proximos torneos</u> </a>
+            <a routerLink="/jugadores/torneos"> <u class="texto_rosa"> Ver próximos torneos</u> </a>
             <br><br>
           </p>
 
-
-
       </div>
       <div class="contenido footer"> <app-footer></app-footer> </div>
-
 
 
   </div>
