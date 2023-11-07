@@ -20,6 +20,7 @@ import { SpiritComponent } from './components/jugador/spirit/spirit.component';
 import { FooterComponent } from './components/jugador/footer/footer.component';
 import { CarrouselComponent } from './components/jugador/carrousel/carrousel.component';
 import { DetalleNovedadComponent } from './components/jugador/detalle-novedad/detalle-novedad.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { DetalleNovedadComponent } from './components/jugador/detalle-novedad/de
 
 
   ],
-  providers: [UsuariosService, HttpClient],
+  providers: [UsuariosService, HttpClient , DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

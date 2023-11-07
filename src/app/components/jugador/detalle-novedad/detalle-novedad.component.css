@@ -1,0 +1,79 @@
+
+.contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* Fondo blanco */
+}
+
+article {
+  max-width: 640px; /* Ajusta el ancho máximo según tu preferencia */
+  padding: 20px;
+
+
+}
+
+.descripcion  {
+  margin-top: 20px; /* Espacio entre la fecha y la descripción */
+  line-height: 1.4; /* Espacio entre líneas de la descripción */
+  color: #222222;
+  padding-bottom: 12px;
+}
+
+img {
+  display: block;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: auto;
+  max-height: 300px; /* Establece una altura máxima si es necesario */
+  margin: 20px 0; /* Espacio alrededor de la imagen y centrada horizontalmente */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+
+
+h1{
+  font-size: 2em;
+  text-align: left;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'open sans',Helvetica,Arial,sans-serif;
+  color:#222222;
+
+}
+
+.fecha{
+
+  text-align: left;
+
+  text-transform: uppercase;
+  font-family: 'open sans',Helvetica,Arial,sans-serif;
+  color:#919191;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+
+}
+.autor{
+
+  text-align: left;
+
+
+  font-family: 'open sans',Helvetica,Arial,sans-serif;
+  color:#9f9e9eca;
+
+
+  border: 0;
+  font-size: 90%;
+
+  vertical-align: baseline;
+
+}
+
+
