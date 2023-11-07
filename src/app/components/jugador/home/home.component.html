@@ -30,60 +30,69 @@
         </!--ul-->
 
         <div class="noticia" *ngIf="novedades && novedades.length > 0">
-          <div >
-
-            <img *ngIf="novedades[0].file ; else imagenPorDefecto" width="400px" height="264px" src="{{URLGetImage+novedades[0].file}}" alt="Imagen de Noticia">
-
-            <ng-template #imagenPorDefecto>
-              <img width="400px" height="264px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia">
-            </ng-template>
-
-          </div>
-          <div class="resumen">
-              <div class="titulo"><h6>{{novedades[0].tittle}}</h6></div>
-              <div class="descripcion">{{ novedades[0].text | slice:0:350 }}
-                {{ novedades[0].text.length > 350? '...' : '' }}</div>
-          </div>
+          <a [routerLink]="['/jugadores/novedad', (novedades[0]._id)]">
+            <div >
+              <img *ngIf="novedades[0].file ; else imagenPorDefecto" width="400px" height="264px" src="{{URLGetImage+novedades[0].file}}" alt="Imagen de Noticia"  onerror="this.src='../../../../assets/img/noticia_default.jpg'" >
+              <ng-template #imagenPorDefecto>
+                <img width="400px" height="264px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia">
+              </ng-template>
+            </div>
+            <div class="resumen">
+                <div class="titulo"><h6>{{novedades[0].tittle}}</h6></div>
+                <div class="descripcion">{{ novedades[0].text | slice:0:350 }}
+                  {{ novedades[0].text.length > 350? '...' : '' }}</div>
+            </div>
+          </a>
         </div>
 
         <div class="noticia-derecha" *ngIf="novedades && novedades.length > 1">
-          <div class="resumen">
-              <div class="titulo"><h6>{{novedades[1].tittle}}</h6></div>
-              <div class="descripcion">{{ novedades[1].text | slice:0:350 }}
-                {{ novedades[1].text.length > 350 ? '...' : '' }}</div>
-          </div>
-          <div >
-            <img *ngIf="novedades[1].file; else imagenPorDefecto" width="400px" height="264px" src="{{URLGetImage+novedades[1].file}}" alt="Imagen de Noticia">
+          <a [routerLink]="['/jugadores/novedad', (novedades[1]._id)]">
+            <div class="resumen">
+                <div class="titulo"><h6>{{novedades[1].tittle}}</h6></div>
+                <div class="descripcion">{{ novedades[1].text | slice:0:350 }}
+                  {{ novedades[1].text.length > 350 ? '...' : '' }}</div>
+            </div>
+            <div >
+              <img *ngIf="novedades[1].file ; else imagenPorDefecto" width="400px" height="264px" src="{{URLGetImage+novedades[1].file}}" alt="Imagen de Noticia"  onerror="this.src='../../../../assets/img/noticia_default.jpg'" >
 
-            <ng-template #imagenPorDefecto>
-              <img width="400px" height="264px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia">
-            </ng-template>
-        </div>
+              <ng-template #imagenPorDefecto>
+                <img width="400px" height="264px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia">
+              </ng-template>
+            </div>
+          </a>
         </div>
 
         <div class="noticia"  *ngIf="novedades && novedades.length > 2">
-          <div >
-            <img *ngIf="novedades[2].file; else imagenPorDefecto" width="400px" height="264px" src="{{URLGetImage+novedades[2].file}}" alt="Imagen de Noticia">
+          <a [routerLink]="['/jugadores/novedad', (novedades[2]._id)]">
+            <div >
+              <img *ngIf="novedades[2].file ; else imagenPorDefecto" width="400px" height="264px" src="{{URLGetImage+novedades[2].file}}" alt="Imagen de Noticia"  onerror="this.src='../../../../assets/img/noticia_default.jpg'" >
+              <ng-template #imagenPorDefecto>
+                <img width="400px" height="264px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia">
+              </ng-template>
+            </div>
+            <div class="resumen">
+                <div class="titulo"><h6>{{novedades[2].tittle}}</h6></div>
+                <div class="descripcion">{{ novedades[2].text | slice:0:350 }}
+                  {{ novedades[2].text.length > 350 ? '...' : '' }}</div>
 
-            <ng-template #imagenPorDefecto>
-              <img width="400px" height="264px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia">
-            </ng-template>
-          </div>
-          <div class="resumen">
-              <div class="titulo"><h6>{{novedades[2].tittle}}</h6></div>
-              <div class="descripcion">{{ novedades[2].text | slice:0:350 }}
-                {{ novedades[2].text.length > 350 ? '...' : '' }}</div>
-
-          </div>
+            </div>
+          </a>
         </div>
 
-        <div style="text-align: center; padding-bottom: 40px;" > <a  routerLink="/jugadores/novedades"> <u class="texto_rosa"> Ver todas las novedades</u> </a></div>
-
+        <span *ngIf="!novedades || novedades.length < 1 ; else VerNovedades"> NO EXISTEN NOVEDADES </span>
+        <ng-template #VerNovedades>
+          <div style="text-align: center; padding-bottom: 40px;" > <a  routerLink="/jugadores/novedades"> <u class="texto_rosa"> Ver todas las novedades</u> </a></div>
+        </ng-template>
 
       </div>
+
+
+
       <div class="contenido torneos">
         <h4><u>Siguiente torneo </u></h4>
+        <a routerLink="/jugadores/torneos">
           <img src="../../../../assets\img\Chiripones_cartel2023.jpg" width="280px">
+        </a>
           <p>
 
             <strong style="font-size: 20px;">CHIRIPONES 2023</strong><span>&#x2600;&#xfe0f;</span>  <br>

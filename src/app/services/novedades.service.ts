@@ -18,11 +18,20 @@ export class NovedadesService {
   public listNovedades(pagina:number=1, novedadesPorPagina:number=200){
 
       var url : string= this.baseUrl+"/listPublications/"+novedadesPorPagina+"/"+pagina;
-
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
       //return firstValueFrom(
       return  this.httpClient.get<any>(url, {headers: headers});
       //)
+  }
 
-    }
+  public getNovedad(id:string){
+
+    var url : string= this.baseUrl+"/getPublication/"+id;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    console.log(url);
+    return  this.httpClient.get<any>(url, {headers: headers});
+  }
+
 }

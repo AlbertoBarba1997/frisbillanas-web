@@ -8,6 +8,8 @@ import { ContenidoComponent } from './components/jugador/contenido/contenido.com
 import { NovedadesComponent } from './components/jugador/novedades/novedades.component';
 import { SpiritComponent } from './components/jugador/spirit/spirit.component';
 import { TorneosComponent } from './components/jugador/torneos/torneos.component';
+import { DetalleNovedadComponent } from './components/jugador/detalle-novedad/detalle-novedad.component';
+
 
 //Componentes de Admin
 import { JugadoresComponent } from './components/admin/jugadores/jugadores.component';
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'jugadores/contenido', component: ContenidoComponent},
   { path: 'jugadores/torneos', component: TorneosComponent},
   { path: 'jugadores/spirit', component: SpiritComponent},
+  { path: 'jugadores/novedad/:id', component: DetalleNovedadComponent},
+
   // Admin:
   { path: 'admin/jugadores', component:JugadoresComponent}
 

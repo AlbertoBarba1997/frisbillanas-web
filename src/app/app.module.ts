@@ -19,6 +19,7 @@ import { CabeceraComponent } from './components/jugador/cabecera/cabecera.compon
 import { SpiritComponent } from './components/jugador/spirit/spirit.component';
 import { FooterComponent } from './components/jugador/footer/footer.component';
 import { CarrouselComponent } from './components/jugador/carrousel/carrousel.component';
+import { DetalleNovedadComponent } from './components/jugador/detalle-novedad/detalle-novedad.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { CarrouselComponent } from './components/jugador/carrousel/carrousel.com
     SpiritComponent,
     FooterComponent,
     CarrouselComponent,
+    DetalleNovedadComponent,
 
 
 

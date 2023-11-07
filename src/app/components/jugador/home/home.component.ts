@@ -11,6 +11,9 @@ import { NovedadesService } from 'src/app/services/novedades.service';
 export class HomeComponent implements OnInit{
 
   public novedades!: Novedad[];
+  public id1!: string;
+  public id2!: string;
+  public id3!: string;
   public URLGetImage: String="http://localhost:4200/api/publicaciones/getImage/";
 
   constructor(
@@ -30,6 +33,14 @@ export class HomeComponent implements OnInit{
         if(response.publicaciones){
 
           this.novedades = response.publicaciones;
+
+          if(this.novedades.length>0){
+            this.id1=this.novedades[0]._id;
+            console.log(this.id1);
+          }
+          if(this.novedades.length>1) this.id2=this.novedades[1]._id;
+          if(this.novedades.length>2) this.id3=this.novedades[2]._id;
+
 
         }
 

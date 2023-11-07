@@ -5,6 +5,7 @@
   align-items: center;
   text-align: center;
 
+
 }
 
 .social-icons a{
@@ -26,4 +27,8 @@
 
 .footer-bottom p{
   line-height: 20px;
+}
+
+.footer-div{
+  border: 1px solid #787777;
 }
