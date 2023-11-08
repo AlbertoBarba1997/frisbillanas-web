@@ -1,3 +1,39 @@
 <app-cabecera></app-cabecera>
-<br>
-<p>novedades works!</p>
+
+<div class="contenido">
+
+  <div *ngFor="let novedad of novedades">
+    <article class="noticia">
+      <a [routerLink]="['/jugadores/novedad', (novedad._id)]">
+        <div >
+          <img *ngIf="novedad.file ; else imagenPorDefecto" width="400px" height="264px" src="{{URLGetImage+novedad.file}}" alt="Imagen de Noticia"  onerror="this.src='../../../../assets/img/noticia_default.jpg'" >
+          <ng-template #imagenPorDefecto>
+            <img width="400px" height="264px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia">
+          </ng-template>
+        </div>
+        <div class="resumen">
+            <div class="titulo"><h2>{{novedad.tittle}}</h2></div>
+            <div class="fecha"><span>{{novedad.created_at | date: 'dd/MM/yyyy'}}</span></div>
+            <div class="descripcion">{{ novedad.text | slice:0:400 }}
+              {{ novedad.text.length > 400? '...' : '' }}</div>
+        </div>
+      </a>
+    </article>
+  </div>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item" [ngClass]="{ 'disabled': paginaActual === 1 }">
+        <a class="page-link" (click)="cambiarPagina(paginaActual - 1)" >Previous</a>
+      </li>
+      <li class="page-item" *ngFor="let pagina of getPaginas()">
+        <a class="page-link" [class.active]="pagina === paginaActual" (click)="cambiarPagina(pagina)" >{{ pagina }}</a>
+      </li>
+      <li class="page-item" [ngClass]="{ 'disabled': paginaActual === totalPaginas }">
+        <a class="page-link" (click)="cambiarPagina((paginaActual+1))">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+</div>
+<app-footer></app-footer>

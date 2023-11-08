@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   //Jugador:
   { path: 'jugadores/home', component: HomeComponent},
-  { path: 'jugadores/novedades', component: NovedadesComponent},
+  { path: 'jugadores/novedades/:pagina', component: NovedadesComponent},
   { path: 'jugadores/contenido', component: ContenidoComponent},
   { path: 'jugadores/torneos', component: TorneosComponent},
   { path: 'jugadores/spirit', component: SpiritComponent},

@@ -1,0 +1,93 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff; /* Fondo blanco */
+
+
+  text-align: left;
+  color:black;
+  margin:40px auto;
+
+
+}
+
+article {
+  width: 1200px; /* Ajusta el ancho máximo según tu preferencia */
+  padding: 20px;
+  margin: 0 auto;
+}
+
+
+.footer{
+  grid-column:1 / span 2;
+  background-color: rgb(1, 7, 3);
+  border: 1px solid black;
+
+}
+
+/* Estilos para los divs de noticias */
+.noticia{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 26px;
+  margin-top: 12px;
+
+}
+.noticia a{
+  display: flex;
+  text-decoration: none;
+  color: rgb(2, 1, 1);
+
+}
+
+
+.noticia h2{
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+
+.resumen{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 24px;
+  text-align: justify;
+  margin-top: 4px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.page-link .page-item{
+  color: black;
+}
+
+.fecha{
+
+  text-align: left;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  font-family: 'open sans',Helvetica,Arial,sans-serif;
+  color:#919191;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+
+}
+
+.pagination{
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+
