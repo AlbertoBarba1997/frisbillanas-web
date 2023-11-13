@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-spirit',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./spirit.component.css']
 })
 export class SpiritComponent {
+
+
 
 }

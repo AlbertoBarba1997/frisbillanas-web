@@ -1,4 +1,16 @@
 <app-cabecera></app-cabecera>
-<br>
 
-<p>spirit works!</p>
+
+<div class="pdf-viewer-container">
+
+  <pdf-viewer #pdfViewer
+              [src]="'../../../../assets/docs/wfdf-rules-of-ultimate-2021-2024-esp.pdf'"
+              [render-text]="true"
+              [original-size]="false"
+              style="width: 75%; height: 1000px;"
+  ></pdf-viewer>
+
+</div>
+
+
+<app-footer></app-footer>
