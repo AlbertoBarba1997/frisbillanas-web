@@ -1,0 +1,47 @@
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+
+}
+.torneos-container{
+  min-height: 60%;
+  width: 100%;
+  padding: 40px;
+  padding-bottom: 12px;
+  display: block;
+
+
+}
+
+
+.navbar-collapse {
+  font-family: "Adam bold";
+  font-size: 20px;
+
+}
+
+table{
+  border: 1px solid #0000001b;
+}
+
+.navbar-brand{
+  font-family: "Adam bold";
+  font-size: 24px;
+  font-weight: bold;
+  color: #cf6486;
+}
+
+a:not([href]):not([tabindex]) {
+  color: #cf6486;
+  text-decoration: none;
+}
+
+.bg-black {
+  background-color: #000 !important;
+}
+
+

@@ -23,6 +23,7 @@ import { SpiritComponent } from './components/jugador/spirit/spirit.component';
 import { FooterComponent } from './components/jugador/footer/footer.component';
 import { CarrouselComponent } from './components/jugador/carrousel/carrousel.component';
 import { DetalleNovedadComponent } from './components/jugador/detalle-novedad/detalle-novedad.component';
+import { DetalleTorneoComponent } from './components/jugador/detalle-torneo/detalle-torneo.component';
 
 
 
@@ -43,6 +44,7 @@ import { DetalleNovedadComponent } from './components/jugador/detalle-novedad/de
     FooterComponent,
     CarrouselComponent,
     DetalleNovedadComponent,
+    DetalleTorneoComponent,
 
 
 

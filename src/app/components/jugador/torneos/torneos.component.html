@@ -1,4 +1,71 @@
 <app-cabecera></app-cabecera>
-<br>
 
-<p>torneos works!</p>
+<div class="torneos-container">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <span class="navbar-brand titulo" (click)="cambiarModalidad(0, $event)" style="cursor: pointer;">torneos</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <span class="nav-link " (click)="cambiarModalidad(0, $event)" style="cursor: pointer;"> Todos <span class="sr-only">(current)</span></span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link" (click)="cambiarModalidad(1, $event)" style="cursor: pointer;"> Playa </span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link" (click)="cambiarModalidad(2, $event)" style="cursor: pointer;"> Cesped</span>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <input #busquedaInput class="form-control mr-sm-2" type="search" placeholder="Busqueda por lugar" aria-label="search">
+        <button class="btn btn-outline-info my-2 my-sm-0" type="button" (click)="realizarBusqueda()">Buscar</button>
+      </form>
+    </div>
+  </nav>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Fecha</th>
+      <th scope="col">Lugar</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Modalidad</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let torneo of torneos">
+      <td scope="row"> {{ torneo.date | date: 'dd/MM/yyyy'}}</td>
+      <td scope="row"> {{ torneo.place }}</td>
+      <td scope="row"> {{ torneo.name }}</td>
+      <td scope="row"> {{ torneo.modality === 1 ? 'Playa' : 'Césped' }}</td>
+
+
+      <td><button class="btn btn-outline-dark" [routerLink]="['/jugadores/torneo', (torneo._id)]">Ver detalles</button></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+<div class="container">
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item" [ngClass]="{ 'disabled': paginaActual === 1 }">
+      <a class="page-link" (click)="cambiarPagina(paginaActual - 1)" >Previous</a>
+    </li>
+    <li class="page-item" *ngFor="let pagina of getPaginas()">
+      <a class="page-link" [class.active]="pagina === paginaActual" (click)="cambiarPagina(pagina)" >{{ pagina }}</a>
+    </li>
+    <li class="page-item" [ngClass]="{ 'disabled': paginaActual === totalPaginas }">
+      <a class="page-link" (click)="cambiarPagina((paginaActual+1))">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+<app-footer></app-footer>
+
