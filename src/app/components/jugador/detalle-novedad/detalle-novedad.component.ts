@@ -36,15 +36,12 @@ export class DetalleNovedadComponent implements OnInit {
 
 
   private cargarNovedad(id : string){
-    console.log("id:"+id);
-    this._novedadesService.getNovedad(id).subscribe(
 
+    this._novedadesService.getNovedad(id).subscribe(
       response => {
         if(response){
           if(response.publication) this.novedad = response.publication;
-          console.log(this.novedad);
         }
-
       },
       error => {
         console.log(error);

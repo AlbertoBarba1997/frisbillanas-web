@@ -3,7 +3,7 @@
 <div class="torneos-container">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <span class="navbar-brand titulo" (click)="cambiarModalidad(0, $event)" style="cursor: pointer;">torneos</span>
+    <span class="navbar-brand titulo" (click)="cambiarModalidad(0, $event)" style="cursor: pointer;">Temporada de torneos</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,7 +22,7 @@
       </ul>
       <form class="form-inline">
         <input #busquedaInput class="form-control mr-sm-2" type="search" placeholder="Busqueda por lugar" aria-label="search">
-        <button class="btn btn-outline-info my-2 my-sm-0" type="button" (click)="realizarBusqueda()">Buscar</button>
+        <button class="btn btn-outline-light text-black" type="button" (click)="realizarBusqueda()">Buscar</button>
       </form>
     </div>
   </nav>
@@ -33,6 +33,7 @@
       <th scope="col">Lugar</th>
       <th scope="col">Nombre</th>
       <th scope="col">Modalidad</th>
+      <th scope="col">Tarifa</th>
       <th scope="col">Acciones</th>
     </tr>
   </thead>
@@ -42,6 +43,7 @@
       <td scope="row"> {{ torneo.place }}</td>
       <td scope="row"> {{ torneo.name }}</td>
       <td scope="row"> {{ torneo.modality === 1 ? 'Playa' : 'Césped' }}</td>
+      <td scope="row"> {{ torneo.fee ? torneo.fee + '€' : 'gratis' }}</td>
 
 
       <td><button class="btn btn-outline-dark" [routerLink]="['/jugadores/torneo', (torneo._id)]">Ver detalles</button></td>

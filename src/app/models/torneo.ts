@@ -8,6 +8,11 @@ export class Torneo{
     public date: Date,
     public modality : number,
     public gender : number,
-    public file : string
-    ){  }
+    public file : string,
+    public fee : number ,
+    public nParticipantes : number =0,
+    public participa: boolean = false
+    ){
+
+     }
 }

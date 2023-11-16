@@ -1,3 +1,74 @@
 <app-cabecera></app-cabecera>
 
-<p>detalle-torneo works!</p>
+<div class="container">
+
+  <div class="card ficha-torneo" >
+    <div class="card-header">
+      Ficha del torneo
+    </div>
+    <div class="card-body">
+      <div class="titulo" >
+        <h1>{{torneo.name}}</h1>
+      </div>
+
+      <div class="imagen-torneo">
+        <img *ngIf="torneo.file ; else imagenPorDefecto" width="300PX" height="190px" src="{{URLGetImage+torneo.file}}"
+          style="text-align: center;" alt="Imagen de Noticia"
+          onerror="this.src='../../../../assets/img/noticia_default.jpg'">
+        <ng-template #imagenPorDefecto>
+          <img width="400px" height="264px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia">
+        </ng-template>
+      </div>
+
+      <div class="info-torneo">
+      <div><span><br><b>FECHA:</b> {{torneo.date | date: 'dd/MM/yyyy'}}</span></div>
+      <div><span><b>CIUDAD:</b> {{torneo.place}}</span></div>
+      <div><span><b>MODALIDAD:</b> {{torneo.place}}</span></div>
+      <div><span><b>TARIFA:</b> {{ torneo.fee ? torneo.fee + '€' : 'gratis' }}</span></div>
+      <div><span><b>DESCRIPCIÓN:</b></span></div>
+      <div class="descripcion" [innerHtml]="procesarTexto(torneo.description)"></div>
+
+    </div>
+
+
+
+    <div class="boton-apuntarse" >
+      <div *ngIf="!logeado">
+        <button class="btn btn-dark btn-lg" [disabled]="true" style="margin-top:  4px;">APUNTARSE</button>
+        <p class="texto_rosa">Para apuntarte, necesitas estar logueado. <br><a class="texto_rosa" [routerLink]="['/login']"> <u><strong>Inicia sesión aquí</strong></u></a></p>
+      </div>
+
+      <div *ngIf="logeado && !participa">
+        <button class="btn btn-dark btn-lg" (click)="apuntarse()">APUNTARSE</button>
+      </div>
+
+      <div *ngIf="logeado && participa">
+        <button class="btn btn-dark btn-lg" (click)="desapuntarse()">DESAPUNTARSE </button>
+      </div>
+
+    </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="card listado-participantes">
+    <div class="card-header">
+      Listado de participantes
+    </div>
+    <div class="card-body">
+      </div>
+    </div>
+
+
+
+  <!--a routerLink="/jugadores/torneos" class="texto_rosa">← Volver a pagina de torneos</a-->
+
+
+
+
+</div>
+
+<app-footer></app-footer>
+
