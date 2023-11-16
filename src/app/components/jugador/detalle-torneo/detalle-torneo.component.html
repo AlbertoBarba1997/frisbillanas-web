@@ -12,7 +12,7 @@
       </div>
 
       <div class="imagen-torneo">
-        <img *ngIf="torneo.file ; else imagenPorDefecto" width="300PX" height="190px" src="{{URLGetImage+torneo.file}}"
+        <img *ngIf="torneo.file ; else imagenPorDefecto" width="300PX" height="190px" src="{{URLGetImageTorneo+torneo.file}}"
           style="text-align: center;" alt="Imagen de Noticia"
           onerror="this.src='../../../../assets/img/noticia_default.jpg'">
         <ng-template #imagenPorDefecto>
@@ -57,9 +57,23 @@
     <div class="card-header">
       Listado de participantes
     </div>
-    <div class="card-body">
-      </div>
-    </div>
+
+    <ul class="list-group list-group-flush" >
+      <li class="list-group-item" *ngFor="let participacion of participaciones">
+
+
+        <img *ngIf="participacion.user.avatar; else avatarPorDefecto" width="60px" height="60px" src="{{URLGetImageUser+participacion.user.avatar}}"
+            style="border-radius: 50%; border: 1px solid black; text-align: center;"  alt="Imagen de Avatar"
+          onerror="this.src='../../../../assets/img/iconos/usuario-40.png'">
+        <ng-template #avatarPorDefecto>
+          <img width="80px" height="80px" class="rounded-0" src="../../../../assets/img/iconos/usuario-40.png" alt="Imagen de Noticia">
+        </ng-template>
+
+
+        <span style="margin-left: 20px;"> {{ participacion.user.name }} </span></li>
+
+    </ul>
+  </div>
 
 
 

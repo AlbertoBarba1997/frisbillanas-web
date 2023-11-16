@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import {Torneo} from "../../../models/torneo";
 import { TorneosService } from 'src/app/services/torneos.service';
 import { Router } from '@angular/router';
+import { Participacion } from 'src/app/models/participacion';
+import {Participante} from "../../../models/participante";
 
 @Component({
   selector: 'app-detalle-torneo',
@@ -14,11 +16,13 @@ export class DetalleTorneoComponent {
 
   public id : string = "0";
   public torneo!: Torneo;
-  public URLGetImage: string="http://localhost:4200/api/usuarios/getImage/";
+  public URLGetImageTorneo: string="http://localhost:4200/api/torneos/getImage/";
+  public URLGetImageUser: string="http://localhost:4200/api/usuarios/getAvatar/";
   public logeado : boolean = false;
   public token :string ='';
   public participa :boolean = false;
   public id_participacion : string = '';
+  public participaciones! : Participacion[];
 
   constructor(private route: ActivatedRoute,
      private _torneosService : TorneosService,
@@ -79,12 +83,12 @@ export class DetalleTorneoComponent {
       )
     }
     else{
-      console.log('entra');
+
       this._torneosService.getTorneo(id).subscribe(
         response => {
           if(response){
             if(response.tournament) this.torneo = response.tournament;
-            console.log('TORNEO CARGADO:',this.torneo.name);
+
           }
         },
         error => {
@@ -99,17 +103,17 @@ export class DetalleTorneoComponent {
   private cargarParticipantes(id : string){
     // Carga los participantes de un torneo
     console.log('Cargando participantes...');
-    this._torneosService.getTorneo(id).subscribe(
+    this._torneosService.listParticipantesTorneo(id).subscribe(
         response => {
           if(response){
-            if(response.tournament) this.torneo = response.tournament;
-            console.log('TORNEO CARGADO:',this.torneo.name);
+            if(response.participations) this.participaciones = response.participations;
+            console.log('PARTICIPANTES CARGADO:',this.participaciones);
           }
         },
         error => {
           console.log(error);
-          this.navigateToTorneos();
-          alert("Error al cargar el torneo. Redireccionando al listado de torneos...");
+          /*this.navigateToTorneos();
+          alert("Error al cargar el torneo. Redireccionando al listado de torneos...");*/
         }
       )
   }

@@ -3,7 +3,15 @@
   <div class="social-icons">
 
       <span class="nombre-usuario">{{ usuarioLogueado }}</span>
-      <img class="imagen-usaurio" src="../../../../assets/img/iconos/user-ng-2.png" alt="Email">
+
+      <img *ngIf="avatarLogueado!=''; else avatarPorDefecto" width="30px" height="30px" src="{{URLGetImageUser+avatarLogueado}}"
+            style="border-radius: 50%; border: 1px solid black; text-align: center;"  alt="Imagen de Avatar"
+          onerror="this.src='../../../../assets/img/iconos/usuario-40.png'">
+        <ng-template #avatarPorDefecto>
+          <img width="80px" height="80px" class="rounded-0" src="../../../../assets/img/iconos/usuario-40.png" alt="Imagen de Noticia">
+        </ng-template>
+
+
 
   </div>
 </header>

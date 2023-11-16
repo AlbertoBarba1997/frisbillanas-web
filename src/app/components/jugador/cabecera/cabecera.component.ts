@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./cabecera.component.css']
 })
 export class CabeceraComponent implements OnInit{
-  usuarioLogueado: string;
+  usuarioLogueado: string = "Usuario";
+  avatarLogueado: string = "";
+  public URLGetImageUser: string ="http://localhost:4200/api/usuarios/getAvatar/";
 
-  constructor(private router: Router) {
-    this.usuarioLogueado = "Usuario";
-  }
+  constructor(private router: Router) {  }
 
 
   ngOnInit(): void {
@@ -20,8 +20,11 @@ export class CabeceraComponent implements OnInit{
 
       if(userString!= null){
         const user = JSON.parse(userString!);
-        let nombre= user.name;
-        this.usuarioLogueado = nombre;
+
+        this.usuarioLogueado = user.name;
+        this.avatarLogueado = user.avatar;
+        console.log("AVATAR:" + this.avatarLogueado);
+
         //Cargar imagen redonda :)
 
       }else{
