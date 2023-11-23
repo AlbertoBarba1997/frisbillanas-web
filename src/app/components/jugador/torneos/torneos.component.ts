@@ -48,6 +48,7 @@ export class TorneosComponent implements OnInit{
   ngOnInit(): void {
 
     this.cargarTorneos();
+    window.scrollTo(0, 0);
   }
 
   // Peticon GET para cargar los torneos segun la pagina en la que esté y el total de paginas

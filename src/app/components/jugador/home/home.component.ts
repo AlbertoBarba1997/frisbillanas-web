@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.cargarUltimasNovedades();
+    window.scrollTo(0, 0);
   }
 
   private cargarUltimasNovedades(){

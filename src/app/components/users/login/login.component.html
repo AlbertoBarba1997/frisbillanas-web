@@ -8,7 +8,7 @@
 
 
       <div class="register-form">
-        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" (keydown.enter)="onSubmit()">
 
           <div class="form-group">
             <label>Correo</label>

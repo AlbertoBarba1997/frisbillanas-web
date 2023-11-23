@@ -31,6 +31,7 @@ export class DetalleNovedadComponent implements OnInit {
   }
   ngOnInit(): void {
     this.cargarNovedad(this.id);
+    window.scrollTo(0, 0);
   }
 
 

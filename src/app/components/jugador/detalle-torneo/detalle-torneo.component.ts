@@ -14,7 +14,7 @@ import {Participante} from "../../../models/participante";
 })
 export class DetalleTorneoComponent {
 
-  public id : string = "0";
+  public idTorneo : string = "0";
   public torneo!: Torneo;
   public URLGetImageTorneo: string="http://localhost:4200/api/torneos/getImage/";
   public URLGetImageUser: string="http://localhost:4200/api/usuarios/getAvatar/";
@@ -30,13 +30,13 @@ export class DetalleTorneoComponent {
      private utilService : UtilService) {
 
     this.route.params.subscribe(params => {
-      this.id = params['id'];
+      this.idTorneo = params['id'];
       // Ahora puedes utilizar el valor de "id" en tu componente
     });
   }
   ngOnInit(): void {
     this.comprobarUsuarioLogeado();
-    this.cargarTorneo(this.id);
+    this.cargarTorneo(this.idTorneo);
   }
 
 
@@ -150,10 +150,53 @@ export class DetalleTorneoComponent {
 
   apuntarse(){
     // A traves de una peticion Http, crea un registro en la base de datos de participacion
+
+    //1.Metodo para dar de baja la participacion
+    this._torneosService.altaParticipacion(this.token, this.idTorneo).subscribe(
+      response => {
+        if(response){
+          //2. Metodo para recargar las participaciones de la tabla
+          this.cargarParticipantes(this.idTorneo);
+          //3. Resetear false para que el boton vuelva a poner "Despuntarse"
+          this.participa=true;
+          //4. Actualizar participacion
+          try{
+            this.id_participacion=response.participation_stored._id;
+            console.log("Nueva Participacion! :" + response.participation_stored._id)
+          }catch(err){}
+        }
+
+      },
+
+      error => {
+        console.log(error);
+        //4. Mostrar mensaje de error
+      }
+    )
+
   }
 
   desapuntarse(){
-    // A traves de otra peticion Http, elimina un registro en la base de datos de participacion
+    // A traves de una peticion Http, crea un registro en la base de datos de participacion
+
+    //1.Metodo para dar de baja la participacion
+    this._torneosService.bajaParticipacion(this.token, this.id_participacion).subscribe(
+      response => {
+        if(response){
+          console.log(response);
+          //2. Metodo para recargar las participaciones de la tabla
+          this.cargarParticipantes(this.idTorneo);
+          //3. Resetear false para que el boton vuelva a poner "Despuntarse"
+          this.participa=false;
+        }
+
+      },
+
+      error => {
+        console.log(error);
+        //4. Mostrar mensaje de error
+      }
+    )
   }
 
 

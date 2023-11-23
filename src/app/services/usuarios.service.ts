@@ -19,11 +19,8 @@ export class UsuariosService {
   public login(formValue: any){
       console.log("formValue: " + formValue);
 
-
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      //return firstValueFrom(
       return  this.httpClient.post<any>('http://localhost:4200/api/usuarios/login', formValue) ;
-      //)
 
     }
 

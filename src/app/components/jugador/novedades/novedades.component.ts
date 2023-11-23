@@ -41,6 +41,8 @@ export class NovedadesComponent implements OnInit{
   ngOnInit(): void {
 
     this.cargarNovedades();
+    window.scrollTo(0, 0);
+    //Esto hace que la pagina se desplace hacia arriba del todo, y no se quede abajo, cosa que pasa a menudo al navegar entre componentes angular
   }
 
   // Peticon GET para cargar las novedades segun la pagina en la que esté y el total de paginas
