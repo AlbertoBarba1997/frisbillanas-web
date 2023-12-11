@@ -31,3 +31,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .texto_rosa{
   color: #cf6486;
 }
+
+.texto_rosaoscuro{
+  color: #30141d;
+}
+
+.texto_negro{
+  color: black;
+}
+
+.fondo_oscuro{
+  background-color: rgb(33, 32, 32);
+}

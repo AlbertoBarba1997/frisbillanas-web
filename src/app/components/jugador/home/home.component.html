@@ -14,20 +14,7 @@
       </div>
       <div class="contenido noticias">
         <h4><u>Ultimas novedades </u></h4>
-        <!--ul class="listado-noticia">
-          <li *ngFor="let novedad of novedades"  >
-            <div class="noticia">
-              <div >
-                  <img width="350px" src="../../../../assets/img/noticia_default.jpg" alt="Imagen de Noticia 1">
-              </div>
-              <div class="resumen">
-                  <div class="titulo"><h6>{{novedad.tittle}}</h6></div>
-                  <div class="descripcion">{{ novedad.text | slice:0:350 }}
-                    {{ novedad.text.length > 350 ? '...' : '' }}</div>
-              </div>
-          </div>
-          </li>
-        </!--ul-->
+
 
         <div class="noticia" *ngIf="novedades && novedades.length > 0">
           <a [routerLink]="['/jugadores/novedad', (novedades[0]._id)]">

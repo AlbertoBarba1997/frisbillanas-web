@@ -56,7 +56,7 @@ export class DetalleTorneoComponent {
               //Si trae el campo "participation" lleno con el id, quiere decir que participa
               if(response.participation && response.participation!=""){
                 this.participa=true;
-                this.id_participacion=response.participation._id;
+                this.id_participacion=response.participation;
                 console.log("id de la participacion:"+this.id_participacion);
               }
               //Si no trae participacion lo setearemos a false, para despues ajustar el boton y funciones de apuntarse/desapuntarse
@@ -112,6 +112,8 @@ export class DetalleTorneoComponent {
         },
         error => {
           console.log(error);
+          this.participaciones=[];
+
           /*this.navigateToTorneos();
           alert("Error al cargar el torneo. Redireccionando al listado de torneos...");*/
         }
@@ -179,6 +181,7 @@ export class DetalleTorneoComponent {
   desapuntarse(){
     // A traves de una peticion Http, crea un registro en la base de datos de participacion
 
+    console.log("Id de participacion:" +this.id_participacion);
     //1.Metodo para dar de baja la participacion
     this._torneosService.bajaParticipacion(this.token, this.id_participacion).subscribe(
       response => {
